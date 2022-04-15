@@ -8,12 +8,15 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongodb-session')(session);
+const flash = require('connect-flash');
+const customMiddleware = require('./config/middleware');
 
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('./assets'));
 
-// app.use(expressLayouts);
+app.use(expressLayouts);
 //extracts styles and scripts from subpage into the layout
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
@@ -53,6 +56,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
+
+app.use(flash());
+app.use(customMiddleware.setFlash);
+
 
 app.use('/', require('./routes/home')); 
 

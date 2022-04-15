@@ -1,2 +1,31 @@
-<h1>Dashboard</h1>
-<a href="/user/signout">signout</a>
+<body>
+    <h1>Dashboard</h1>
+    <a href="/dashboard/create-project">Add Project</a>
+    <a href="/user/signout">signout</a>
+
+    <li>
+        <% for(project of projects){ %>
+
+            <ul>
+                <h5><%= project.name %></h5>
+                <a href="/dashboard/download/<%= project.question[0] %>">Download</a>
+            </ul>
+            
+
+        <% } %>
+    </li>
+</body>
+
+<!-- <script>
+    const fs = require('fs');
+    function Download(Path) {
+        const path = Path;
+        fs.readFile(path, (err, data) => {
+            if(err){
+                return next(err);
+            }
+            res.setHeader('Content-Disposition', 'attachment: filename="' + filename + '"');
+            res.send(data);
+        })
+    }
+</script> -->

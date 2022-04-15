@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- notyf -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    
+    <!-- stylesheet for login page -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/sign_in_page/css/style.css">
+    
+    <!-- stylesheet for Register page -->
+    <link rel="stylesheet" href="/sign_up_page/css/style.css" />
+
+    <title>
+        <%= title %>
+    </title>
+</head>
+<body>
+    <%- include('header'); %> 
+
+    <%- body %>
+    
+    <%- include('footer'); %>
+    
+    <%- script %>
+    <script>
+        
+        <% if(flash.success && flash.success.length > 0){ %>
+            var notyf = new Notyf({
+                type: 'success',
+                position: {
+                    x: 'right',
+                    y: 'top',
+                },
+                background: 'green',
+                duration: 1500 
+            });
+            notyf.success('<%= flash.success %>');
+        <% }else if(flash.error && flash.error.length > 0){ %> 
+            var notyf = new Notyf({
+                type: 'error',
+                position: {
+                    x: 'right',
+                    y: 'top',
+                },
+                background: 'orange',
+                duration: 1500 
+            });
+            notyf.error('<%= flash.error %>');
+        <% } %>
+    </script>
+
+</body>
+
+</html>

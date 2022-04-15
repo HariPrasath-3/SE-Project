@@ -35,10 +35,12 @@ module.exports.create = async (req, res) => {
 };
 
 module.exports.createSession = (req, res) => {
-    return res.render('dashboard');
+    req.flash('success', 'Logged In Successfully')
+    return res.redirect('/dashboard');
 };
 
 module.exports.destroysession = (req, res) => {
     req.logout();
+    req.flash('error', 'Logged Out Successfully')
     return res.redirect('/');
 }
