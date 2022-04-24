@@ -20,12 +20,17 @@ module.exports.create = async (req, res) => {
     try{
         let user = await User.findOne({email: req.body.email});
         if(!user){
-            User.create(req.body, (err, user) => {
-                if(err){console.log('error in creating user while signing up');return;}
-                console.log("user create successfully")
-                return res.redirect('/user/signin');
+            User.create({
+                email: req.body.email,
+                password: req.body.password,
+                name: req.body.name,
+                role: "student"
+            }, (err) => {
+                console.log('error in creating user while signing up');
+                return;
             });
-            
+            console.log("user create successfully")
+            return res.redirect('/user/signin');            
         }else{
             return  res.redirect('back');
         }

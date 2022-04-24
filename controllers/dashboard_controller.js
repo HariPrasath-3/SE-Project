@@ -1,19 +1,44 @@
 const Project = require('../models/project');
+const User = require('../models/user');
 const fs = require('fs');
 const path = require('path');
 
 module.exports.dashboard = async (req, res) => {
-    try{
-        let project = await Project.find({})
-            .populate('createdBy');
+    try{        
         return res.render('dashboard', {
             title: "Dashboard",
-            projects: project
+            page: "dashboard_home",
         });
     }catch(err){
         console.log("Error in creating project...\n", err);
     }
 };
+
+module.exports.projects = async (req, res) => {
+    try{
+        let project = await Project.find({}).populate('createdBy');
+        return res.render('dashboard_projects', {
+            title: "Dashboard",
+            page: "dashboard_projects",
+            projects: project
+        });
+    }catch(err){
+        console.log("Error in creating project...\n", err);
+    }
+}
+
+module.exports.users = async (req, res) => {
+    let user = await User.find({});
+    try{
+        return res.render('dashboard_users', {
+            title: "Dashboard",
+            page: "dashboard_users",
+            users: user
+        });
+    }catch(err){
+        console.log("Error in creating project...\n", err);
+    }
+}
 
 module.exports.createProject = (req, res) => {
     return res.render('project', {

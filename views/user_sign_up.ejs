@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/sign_up_page/css/style.css" />
+    <title><%= title %></title>
+</head> 
 <body class="form-v4">
     <div class="page-content">
         <div class="form-v4-content">
@@ -8,8 +14,33 @@
                 <input type="password" name="password" id="password" class="input-text" placeholder="Password" required>
                 <input type="password" name="confirm_password" id="comfirm_password" class="input-text" placeholder="Confirm Password" required>
                 <input type="submit" class="register" value="Register">
-            
             </form>
         </div>
-    </div>    
-</body
+    </div>   
+    <script>        
+        <% if(flash.success && flash.success.length > 0){ %>
+            var notyf = new Notyf({
+                type: 'success',
+                position: {
+                    x: 'right',
+                    y: 'top',
+                },
+                background: 'green',
+                duration: 1500 
+            });
+            notyf.success('<%= flash.success %>');
+        <% }else if(flash.error && flash.error.length > 0){ %> 
+            var notyf = new Notyf({
+                type: 'error',
+                position: {
+                    x: 'right',
+                    y: 'top',
+                },
+                background: 'orange',
+                duration: 1500 
+            });
+            notyf.error('<%= flash.error %>');
+        <% } %>
+    </script> 
+</body>
+</html>

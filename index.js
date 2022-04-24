@@ -16,10 +16,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('./assets'));
 
-app.use(expressLayouts);
-//extracts styles and scripts from subpage into the layout
-app.set('layout extractStyles', true);
-app.set('layout extractScripts', true);
+// app.use(expressLayouts);
+// //extracts styles and scripts from subpage into the layout
+// app.set('layout extractStyles', true);
+// app.set('layout extractScripts', true);
 
 
 

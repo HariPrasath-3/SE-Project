@@ -1,0 +1,27 @@
+
+<h4>Main</h4>
+<div class="menu-items">
+    <i class="fa-solid fa-house"></i>
+    <li><a href="/dashboard">Dashboard</a></li>
+</div>
+<div class="menu-items">
+    <i class="fa-solid fa-chalkboard-user"></i>
+    
+    <li><a href="/dashboard/projects">Projects</a></li>
+</div>
+<% if(locals.user.role == "admin"){ %>
+    <div class="menu-items">
+        <i class="fa-solid fa-chalkboard-user"></i>        
+        <li><a href="/dashboard/users">Users</a></li>
+    </div>
+<% } %>
+<div class="menu-items">
+    <i class="fa-solid fa-chalkboard-user"></i>
+    <li>Announcement/News</li>
+</div>
+<% if(locals.user.role != "student"){ %>    
+    <div class="menu-items">
+        <i class="fa-solid fa-chart-line"></i>
+        <li>Upload Projects</li>
+    </div>
+<% } %>

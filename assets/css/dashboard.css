@@ -1,0 +1,175 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+body{
+    padding:0px;
+    overflow-x:hidden;
+    background-color: #efefef;
+}
+.row {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.btn{
+    border:1px solid white;
+}
+.btn:hover{
+    border:2px solid white;
+    background-color: black;
+}
+footer {
+    background-color: #007bff;
+    font-size: 100%;
+    padding: 50px;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: white;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: black;
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+    font-size: 100%;
+    margin-top: 20px;
+}
+
+.fb:hover,
+.fb:active {
+    color: black;
+}
+
+.twitter:hover,
+.twitter:active {
+    color: black
+}
+
+.google:hover,
+.google:active {
+    color: black;
+}
+
+.instagram:hover,
+.intstagram:active {
+    color: black;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%;
+}
+.center{
+    display:flex;
+    justify-content: center;
+}
+.content{
+    display:flex;
+    height:500px;
+}
+.content-left{
+    background:#fff;
+    padding-left: 10px;
+    width:240px;
+}
+.menu-items{
+   display:flex;
+   margin:10px 10px;
+}
+.menu-items li{
+    list-style: none;
+    display:inline-block; 
+    cursor:pointer;
+    margin-top:-3px;
+    margin-left:20px;
+}
+.menu-items li:hover{
+    border-bottom:1px solid blue;
+    color:blue;
+}
+.content-left h4{
+   padding:10px 3px;
+   color:#007bff;
+}
+.content-right{ 
+    flex: 1;
+}
+.content-right-top{
+    margin:5px 8px;
+    background: #fff;
+    padding:8px 8px;
+}
+.content-right-middle{
+    margin:8px 8px;
+    display:flex;
+}
+.middle-content{
+    display:flex;
+    background: #fff;
+    flex-basis:33%;
+    margin:0px 10px;
+    flex: auto;
+}
+.left-part{
+    border-radius:50%;
+    margin:0 10px;
+}
+.left-part i{
+    margin:50px 15px;
+    font-size:40px;
+    
+}
+.right-part{
+    margin:10px 25px;
+    flex:1;
+    text-align-last: right;
+}
+.right-part h6{
+    color:blue;
+}
+.right-part a{
+    text-decoration: none;
+    color:black;
+    cursor:pointer;
+}
+.right-part a:hover{
+    border-bottom:1px solid blue;
+}
+
+.content-right-bottom{
+    margin:18px 18px;
+    background:#fff;
+    text-align: center;
+    height:30px;
+}
+.content-right-bottom span{
+    font-weight: bold;
+    color:blue;
+}
