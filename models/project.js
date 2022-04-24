@@ -64,5 +64,5 @@ let storage = multer.diskStorage({
     }
 });
 
-projectSchema.statics.upload = multer({storage:  storage}).fields([{name: 'question', maxCount: 1}, {name: 'solution'}]);
+projectSchema.statics.upload = multer({storage:  storage}).fields([{name: 'question', maxCount: 5}, {name: 'solution'}]);
 module.exports = project = mongoose.model('project', projectSchema);

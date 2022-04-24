@@ -41,7 +41,7 @@ module.exports.users = async (req, res) => {
 }
 
 module.exports.createProject = (req, res) => {
-    return res.render('project', {
+    return res.render('dashboard_create_project', {
         title: "Create_Project",
     });
 }

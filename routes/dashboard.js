@@ -7,6 +7,8 @@ const passport = require('passport');
 router.get('/create-project', passport.checkAuthentication, dashboardcontroller.createProject);
 router.get('/', dashboardcontroller.dashboard);
 router.get('/projects', dashboardcontroller.projects);
+router.get('/createproject', dashboardcontroller.createProject);
+
 router.get('/users', dashboardcontroller.users);
 router.get('/download/:path', dashboardcontroller.downloadFile);
 
