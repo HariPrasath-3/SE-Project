@@ -16,9 +16,19 @@
                 <a class="nav-link" href="#" style="color:white">Disabled</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <a href="/user/signout">signout</a>
-            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color:white">Login</button> -->
-        </form>
+        <form class="form-inline my-2 my-lg-0 nav-right">
+               
+            <div class="dropdown">
+             <button class="btn btn-secondary dropdown-toggle drop-icon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-toggle="dropdown">
+                 <i class='fa fa-user-circle user' style="font-size: 30px;"></i><%= user.name %>
+             </button>
+             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> 
+               <a class="dropdown-item" href="/dashboard/profile"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;&nbsp;Profile</a>
+               <!-- <a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>&nbsp;&nbsp;&nbsp;Settings</a> -->
+               <a class="dropdown-item" href="/user/signout"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;&nbsp;Logout</a>
+             </div>
+           </div>
+         </form>
+        
     </div>
 </nav>

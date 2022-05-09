@@ -246,3 +246,18 @@ textarea{
 .file-details-below button{
     margin:3px 5px;
 }
+.dropdown{
+    display:flex;
+    flex-direction: row-reverse;
+    border:none;
+    background:#007bff;
+}
+.drop-icon{
+    border:none;
+    background:#007bff;
+   
+}
+.drop-icon:hover{
+    border:none;
+    background:#007bff;
+}

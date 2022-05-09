@@ -8,6 +8,7 @@ module.exports.dashboard = async (req, res) => {
         return res.render('dashboard', {
             title: "Dashboard",
             page: "dashboard_home",
+            user: req.user
         });
     }catch(err){
         console.log("Error in creating project...\n", err);
@@ -17,23 +18,38 @@ module.exports.dashboard = async (req, res) => {
 module.exports.projects = async (req, res) => {
     try{
         let project = await Project.find({}).populate('createdBy');
+        let date = Date(project.due);
         return res.render('dashboard_projects', {
             title: "Dashboard",
             page: "dashboard_projects",
-            projects: project
+            user: req.user,
+            projects: project,
+            dueDate: date.substring(0,15)
         });
     }catch(err){
         console.log("Error in creating project...\n", err);
     }
 }
 
-module.exports.users = async (req, res) => {
-    let user = await User.find({});
+module.exports.profile = async (req, res) => {
     try{
-        return res.render('dashboard_users', {
+        return res.render('dashboard_profile', {
             title: "Dashboard",
-            page: "dashboard_users",
-            users: user
+            page: "dashboard_profile",
+            user: req.user,
+        });
+    }catch(err){
+        console.log("Error in creating project...\n", err);
+    }
+}
+module.exports.users = async (req, res) => {
+    let admin_user = await User.find({});
+    try{
+        return res.render('dashboard_admin_users', {
+            title: "Dashboard",
+            page: "dashboard_admin_users",
+            user: req.user,
+            users: admin_user
         });
     }catch(err){
         console.log("Error in creating project...\n", err);
@@ -43,7 +59,14 @@ module.exports.users = async (req, res) => {
 module.exports.createProject = (req, res) => {
     return res.render('dashboard_create_project', {
         title: "Create_Project",
+        user: req.user
     });
+}
+
+module.exports.projectDetails = (req, res) => {
+    var projectID = req.params['id'];
+    console.log(projectID);
+    res.redirect('back');
 }
 
 module.exports.downloadFile = (req, res) => {
