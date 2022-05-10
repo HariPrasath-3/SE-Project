@@ -38,7 +38,7 @@
         <p>Copyright &copy; 2015 by OCAS.All rights reserved</p>
     </div>    
 </footer>
-<script>        
+<script>     
     <% if(flash.success && flash.success.length > 0){ %>
         var notyf = new Notyf({
             type: 'success',
@@ -50,7 +50,7 @@
             duration: 1500 
         });
         notyf.success('<%= flash.success %>');
-    <% }else if(flash.error && flash.error.length > 0){ %> 
+    <% }else if(flash.error && flash.error.length > 0){ %>
         var notyf = new Notyf({
             type: 'error',
             position: {

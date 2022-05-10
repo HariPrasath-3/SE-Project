@@ -1,5 +1,4 @@
 const express = require('express');
-const expressLayouts = require('express-ejs-layouts');
 const cookieParser = require('cookie-parser');
 const port = 8000;
 const app = express();
@@ -14,7 +13,7 @@ const customMiddleware = require('./config/middleware');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static('./assets'));
+app.use(express.static('./assets/'));
 
 // app.use(expressLayouts);
 // //extracts styles and scripts from subpage into the layout

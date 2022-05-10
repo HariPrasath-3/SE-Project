@@ -1,4 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- notyf -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <title>Home</title>
+</head>
 <body>
     <a href="/user/signin">sign_in</a>
     <a href="/user/signup">sign_up</a>
+    <script>     
+        <% if(flash.success && flash.success.length > 0){ %>
+            var notyf = new Notyf({
+                type: 'success',
+                position: {
+                    x: 'right',
+                    y: 'top',
+                },
+                background: 'green',
+                duration: 1500 
+            });
+            notyf.success('<%= flash.success %>');
+        <% }else if(flash.error && flash.error.length > 0){ %>
+            var notyf = new Notyf({
+                type: 'error',
+                position: {
+                    x: 'right',
+                    y: 'top',
+                },
+                background: 'orange',
+                duration: 1500 
+            });
+            notyf.error('<%= flash.error %>');
+        <% } %>
+    </script>
 </body>
+</html>
