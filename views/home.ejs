@@ -1,18 +1,142 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Omni Food Project</title>
+    <!--Since the css file is present in different folder from the index.html file we should mention the complete path inorder to aceess
+        it-->
+    <link rel="stylesheet" href="/css/home.css">
+    <!--Here we have used the normalise.css framework so that our website will be compatible with any browser from which we 
+    are viewing our website-->
+    <link rel="stylesheet" href="Vendors/grid.css">
+    <link rel="stylesheet" href="Vendors/css/queries.css">
+    <!--Every website must be responsive for making user friendly
+    By the word responsive means it should adjust to the screen from which the website is being viewed on
+Every website is divided into 12 columns Here we are using gridsystem.css to provide responsiveness-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <!--viweport is the user's visble area and it scales to the whole width of the device upon which we are viewing the website
+so that user will not zoom in or zoom out of the site-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- notyf -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
-    <title>Home</title>
+    <!--<link rel="stylesheet" href="Vendors/css/grid.css">-->
+    <!--The below link is for animations-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!--For adding ico in the title bar-->
+    <link rel="icon" href="Source Code/css/images/icon.png">
+
 </head>
+
 <body>
-    <a href="/user/signin">sign_in</a>
-    <a href="/user/signup">sign_up</a>
-    <script>     
+    <header>
+        <nav>
+            <div class="row">
+                <img class="logo" src="/images/omnifoof.png" alt="logo img">
+                <ul class="main-nav">
+                    <li><a href="/user/signin">Sign In</a></li>
+                    <li><a href="/user/signup">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero_text_box">
+            <h1 id="headtext">GoodBye Junk Food<br>Hello Super Healthy Food!!</h1>
+            <br>
+            <!--Since we want some common properties for both the anchor tags we define same class for both of them as btn
+                Inorder to add some unique properties for both of them we have given different classes as btn-full and btn-ghost-->
+            <a class="btn btn-ghost" href="#features">Show me More</a>
+        </div>
+    </header>
+    <!--section has the same features as div-->
+    <section class="section-features" id="features" data-aos="fade-in" data-aos-duration="2000">
+        <div class="row">
+            <!--there is only one h1 tag is possible in the whole website-->
+            <!--Inorder to have dash in between them we set &mdash inbuilt function-->
+            <h2>Get Food Fast &mdash; Not Fast Food</h2>
+            <p class="long-copy">Hello, we are Omnifood, your new premium food delivery service. We know you are always busy. No time for cooking. So let us take care of that, we are really good at it, we promise!
+            </p>
+        </div>
+        <div class="row">
+            <!--Here is the col span-1-of-4 class that we have used inorder to set them in the column way 
+                span of 1 of 4 means it can take 4 classes of width 3-->
+            <div class="col span-1-of-4 box">
+                <ion-icon class="icon-big" name="infinite-outline"></ion-icon>
+                <h3>UP TO 365 DAYS/YEAR</h3>
+                <p>Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style.
+                </p>
+            </div>
+            <div class="col span-1-of-4 box">
+                <ion-icon class="icon-big" name="alarm-outline"></ion-icon>
+                <h3>READY IN 20 MINUTES</h3>
+                <p>You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you're 100% happy.
+                </p>
+            </div>
+            <div class="col span-1-of-4 box">
+                <ion-icon class="icon-big" name="fast-food-outline"></ion-icon>
+                <h3>100% ORGANIC</h3>
+                <p>All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it a lso tastes better!
+                </p>
+            </div>
+            <div class="col span-1-of-4 box">
+                <ion-icon class="icon-big" name="cart-outline"></ion-icon>
+                <h3>ORDER ANYTHING</h3>
+                <p>We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals. It's up to you!
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="row">
+            <div class="col span-1-of-2">
+                <ul class="footer-nav">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">iOS App</a></li>
+                    <li><a href="#">Android App</a></li>
+                </ul>
+            </div>
+            <div class="col span-1-of-2">
+                <ul class="social-links">
+                    <li>
+                        <a href="#">
+                            <ion-icon name="logo-facebook" class="fb"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ion-icon name="logo-twitter" class="twitter"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ion-icon name="logo-google" class="google"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <ion-icon name="logo-instagram" class="instagram"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <p>Copyright &copy; 2015 by Omnifood.All rights reserved</p>
+        </div>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Inorder to find whether jquery is added in our page or not we can use the command jQuery in our console page of our webrowser
+            and if it returns a function then the jquery is included in our webpage-->
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!--Initalisation of animations effect-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
         <% if(flash.success && flash.success.length > 0){ %>
             var notyf = new Notyf({
                 type: 'success',
@@ -36,6 +160,31 @@
             });
             notyf.error('<%= flash.error %>');
         <% } %>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function() {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
     </script>
 </body>
+
 </html>

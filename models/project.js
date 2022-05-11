@@ -16,6 +16,9 @@ const projectSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
+    description: {
+        type: String
+    },
     tas: [
             {
                 type: mongoose.Schema.Types.ObjectId,
@@ -25,7 +28,7 @@ const projectSchema = new mongoose.Schema({
     students: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'user'
+                ref: 'student'
             }
     ],
     question: [
@@ -36,12 +39,6 @@ const projectSchema = new mongoose.Schema({
     totalmark: {
         type: Number,
     },
-    mark: {
-        type: Number
-    },
-    solution: {
-        type: String
-    },
     due: {
         type: Date
     },
@@ -50,7 +47,7 @@ const projectSchema = new mongoose.Schema({
             type:  mongoose.Schema.Types.ObjectId,
             ref: 'comment'
         }
-    ]
+    ],
 }, { 
     timestamps: true 
 });

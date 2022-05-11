@@ -44,33 +44,27 @@ Every website is divided into 12 columns Here we are using gridsystem.css to pro
                 <div class="content-right-middile">
                     <table style="width:100%">
                         <tr>
-                            <th>S.No</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Teacher</th>
+                            <th>Role</th>
+                            <th>submit</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>hari_prasath123</td>
-                            <td>hariprasath@gmail.com</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                  </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>hari_prasath123</td>
-                            <td>hariprasath@gmail.com</td>
-                            <td>
-                                <label class="switch">
-                                    <input type="checkbox">
-                                    <span class="slider round"></span>
-                                  </label>
-                            </td>
-                        </tr>
+                        <% for(user of users){ %>
+                            <tr>
+                                <td><%= user.name %></td>
+                                <td><%= user.email %></td>
+                                <td>
+                                    <select name="Course" id="course">
+                                        <option disabled selected value> -- select an option -- </option>
+                                        <option value="admin">admin</option>
+                                        <option value="teacher">teacher</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <button type="submit"></button>
+                                </td>
+                            </tr>
+                        <% } %>
                         
                     </table>
                 </div>
@@ -78,6 +72,9 @@ Every website is divided into 12 columns Here we are using gridsystem.css to pro
     </section>
     <br>
     <%- include('footer'); %>
+    <script>
+        
+    </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>

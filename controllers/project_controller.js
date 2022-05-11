@@ -1,14 +1,13 @@
 Project = require("../models/project");
 
 module.exports.create =  async (req, res) => {
-    
     Project.upload(req, res, (err) => {
         Project.create({
             name: req.body.name,
+            description: req.body.description,
             createdBy: req.user._id,
             question: req.files.question[0].filename,
-            mark: req.body.score,
-            totalmark: req.body.obtainedScore,
+            totalmark: req.body.score,
             due: req.body.dueDate
         });
         if(err){
@@ -16,4 +15,8 @@ module.exports.create =  async (req, res) => {
         }        
     });      
     return res.redirect("/dashboard");
+}
+
+module.exports.review =  async (req, res) => {
+    return res.render("dashboard_Project_review");
 }

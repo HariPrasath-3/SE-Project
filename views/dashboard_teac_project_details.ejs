@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Manage Assignment</title>
+    <link rel="stylesheet" href="/css/dashboard_teac_project_details.css">
+    <!--Here we have used the normalise.css framework so that our website will be compatible with any browser from which we 
+    are viewing our website-->
+    <link rel="stylesheet" href="Vendors/js/grid.css">
+    <link rel="stylesheet" href="Vendors/css/queries.css">
+    <!--Every website must be responsive for making user friendly
+    By the word responsive means it should adjust to the screen from which the website is being viewed on
+Every website is divided into 12 columns Here we are using gridsystem.css to provide responsiveness-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/32fdb9a229.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/32fdb9a229.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <%- include('header'); %>
+    <br>
+    <section class="row content">
+        <div class="content-left">
+            <%- include('dashboard_left'); %>
+        </div>
+        <div class="content-right">
+          <div class="content-right-top">
+            <h6>Dashboard<h6>
+          </div>
+             <div class="content-right-middle">
+                 <div class="content-right-top">
+                    <div class="content-right-middle-left">
+                        <i class="fa-solid fa-clipboard fa-2x" style="font-size: 40px"></i>
+                        <div class="submit-details">
+                            <div class="submit-details-top">
+                                <h5>SE Project</h5>
+                                <p>Marks <%= project.totalmark %></p>
+                            </div>
+                           
+                            <p style="font-size:13px"><%= project.createdBy.name %>  &nbsp;&#8226; <%= date %></p>
+                            <hr>
+                            <div class='justify'>
+                                <p class="paragraph" style="font-size:15px;"><%= project.description %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-right-middle-right">
+                     <div class="right-top">
+                        
+                        <p>&nbsp;&nbsp;Add students</p>
+                        <i class="fa-solid fa-user-plus"></i>
+
+                     </div>
+                    <div class="right-below">
+                        <input type="text" placeholder="Email address">
+                        <button type="submit" class="butt">Add</button>
+                    </div>
+                        <a href="#">Edit Students</a>
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <br><br>
+                        <a href="/project/project-review">Uploaded files</a>
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <br>
+                    </div>
+                   
+                 </div>
+                 <br><br><br><br><br>
+                 <div class="comments-section">
+                    <div class="comments-section-top">
+                        <i class="fa-solid fa-users" style="font-size:25px;"></i>
+                        <h6>Comments</h6>
+                        </div>
+                    <hr>
+                    <input type="text" class="form-control mr-3 comment-but" placeholder="Add comment"><button class="btn btn-primary" type="button">Comment</button>
+                    <br><br>
+                    <div class="comments-section-below">
+                        <div class="comments-user">
+                            <form class="form-inline my-2 my-lg-0">
+                                <i class='fa fa-user-circle user' style="font-size: 30px;"></i>
+                             </form>
+                            <div class="below-comment-details">
+                                <h6>Hariprasath R</h6>
+                                <p style="font-size:13px">May 3</p>
+                            </div>
+                           
+                        </div>
+                        <div class="comment-para">
+                            <p style="font-size:13px">Can we do this project using MongoDB?</p>
+                        </div>
+                        <div class="comments-user">
+                            <form class="form-inline my-2 my-lg-0">
+                                <i class='fa fa-user-circle user' style="font-size: 30px;"></i>
+                             </form>
+                            <div class="below-comment-details">
+                                <h6>Hariprasath R</h6>
+                                <p style="font-size:13px">May 3</p>
+                            </div>
+                           
+                        </div>
+                        <div class="comment-para">
+                            <p style="font-size:13px">Which technologies we can use?</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            <div class="content-right-bottom">
+                <p>This Dashboard was generated by   <span>OCAS</span></p>
+            </div>
+        </div>
+    </section>
+    <br>
+    <%- include('footer'); %>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src=" https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!--Inorder to find whether jquery is added in our page or not we can use the command jQuery in our console page of our webrowser
+            and if it returns a function then the jquery is included in our webpage-->
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!--Initalisation of animations effect-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+</body>
+</html>

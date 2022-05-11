@@ -43,7 +43,7 @@ module.exports.profile = async (req, res) => {
     }
 }
 module.exports.users = async (req, res) => {
-    let admin_user = await User.find({});
+    let admin_user = await User.find({role: 'student'});
     try{
         return res.render('dashboard_admin_users', {
             title: "Dashboard",
@@ -63,10 +63,29 @@ module.exports.createProject = (req, res) => {
     });
 }
 
-module.exports.projectDetails = (req, res) => {
+module.exports.projectDetails = async (req, res) => {
     var projectID = req.params['id'];
-    console.log(projectID);
-    res.redirect('back');
+    let project = await Project.findById(projectID).populate('createdBy');
+    let date = Date(project.createdAt);
+    console.log(project.createdBy);
+    console.log(project);
+    try{
+        if(req.user.role == "student"){
+            return res.render('dashboard_stud_project_details', {
+                title: "Project_Details",
+                project: project,
+                date: date.substring(0,15)          
+            })
+        }else if(req.user.role == "teacher"){
+            return res.render('dashboard_teac_project_details', {
+                title: "Project_Details",
+                project: project,
+                date: date.substring(0,15)
+            })
+        }
+    }catch(err){
+        console.log("Error in viewing project details...\n", err);
+    }
 }
 
 module.exports.downloadFile = (req, res) => {
